@@ -1,10 +1,90 @@
 html{height: 100%;}
-body{
-    width:1330px;
-    height:768px;
-    background:rgba(245,248,251,1);
+
+.img-bg {
+     width:100%;
+    height:100%;
+    background-color:rgba(245,248,251,1); 
+    overflow: hidden;   
 }
-body.signin {
+.left-img{
+    background-image:url(../img/login-left.png);
+    background-position: 180px 95px;
+    background-repeat: no-repeat;
+    background-size:70% 70%;
+    width:774px;
+    height:591px;
+    z-index: 100;
+    position: absolute;
+}
+.bottom-img{
+    background-image: url(../img/loginbg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10%;
+    z-index:0;
+}
+.middle-box {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+}
+.logo-img{
+    width:120px;
+    height:100px;
+    background-image:url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position:;
+}
+.centerDiv { 
+    height:285px; 
+    top:23%; 
+    position:absolute;
+    width:24%;
+    background-color: white;
+}
+.centerDiv h3{
+    font-size:24px;
+    color:#334573;
+    margin: 30px 23px;
+}
+.loginscreen.middle-box {
+    width: 340px;
+    /* background: rgba( 55, 60, 80, 0.5 ); */
+    padding-left: 394px;
+    padding-right: 50px;
+    color: #a7aeb8;
+    height: 100%;
+    padding-top: 95px;
+}
+.m-b {
+    margin-top: 15px;
+}
+.form-group {
+    margin-bottom: 5px !important;
+    margin: 11px;
+    padding: 5px;
+}
+.check-box {
+    position: relative;
+    display: block;
+    margin-top: -23px;
+    /* margin-bottom: 10px; */
+    padding-left: 0px;
+}
+.full-width {
+    width: 86% !important;
+    margin-left: 23px;
+    margin-top: 5px;
+}
+.form-group input{
+    border: 0;
+    border-radius: 0;
+    border-bottom:1px solid #D7DAE6!important;
+}
+/*body.signin {
     background: #18c8f6;
     height: auto;
     background:url("../img/bg1.jpg") no-repeat center fixed;
@@ -95,4 +175,4 @@ body.signin {
         margin:0 20px;
         width:auto;
     }
-}
+}*/
