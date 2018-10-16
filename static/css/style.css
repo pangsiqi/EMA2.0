@@ -3749,6 +3749,7 @@ nav.page-tabs .page-tabs-content {
     overflow: hidden;
     margin-right: -2px;
     margin-left: -15px;
+    height: auto;
 }
 
 .fixed-nav #content-main {
