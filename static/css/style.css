@@ -2108,7 +2108,7 @@ table.dataTable thead .sorting:after {
 
 .form-control:focus,
 .single-line:focus {
-    border-color: linear-gradient(157deg,rgba(130,177,237,1) 0%,rgba(176,115,253,1) 100%) !important;
+    border-color: #9399F3 !important;
 /*    border-image:1px solid linear-gradient(157deg,rgba(130,177,237,1) 0%,rgba(176,115,253,1) 100%);
 */}
 
