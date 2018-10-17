@@ -1,0 +1,41 @@
+.accordion-group {
+    margin-bottom: 2px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+.accordion-heading {
+    border-bottom: 0;
+}
+.accordion-heading .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+}
+
+.accordion-toggle {
+    cursor: pointer;
+}
+.accordion-inner {
+    padding: 9px 15px;
+    border-top: 1px solid #e5e5e5;
+}
+.tab-block{
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-top: 10px;
+}
+.tab-head{
+     background-color: #DFE5EA;
+}
+.tab-content{
+     background:white;
+}
+#tab-content ul li{
+    float: left;
+}
+.clearfloat{
+    float: none;
+    clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+} 

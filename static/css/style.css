@@ -3717,6 +3717,7 @@ nav.page-tabs {
     width: 100000px;
     height: 40px;
     overflow: hidden;
+    background: #F5F8FB;
 }
 
 nav.page-tabs .page-tabs-content {
@@ -7268,12 +7269,21 @@ body.rtls.top-navigation .footer.fixed {
 
 .content-tabs {
     /*border-bottom: solid 2px #2f4050;*/
+    position: relative;
+    height: 42px;
+    background: #fafafa;
+    line-height: 40px;
     margin-left: -12px;
     margin-right: 2px;
+    margin-bottom: -2px;
 }
 
 .page-tabs a {
     color: #999;
+    margin-top: 7px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: white;
 }
 
 .page-tabs a i {
@@ -7281,8 +7291,11 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .page-tabs a.active {
-    background: #DFE5EA;
+    background: #dfe5ea75;
     color: rgb(120,140,236);
+    margin-top: 6px;
+    border-radius: 5px 5px;
+    margin-left: 17px;
 }
 
 .page-tabs a.active:hover,

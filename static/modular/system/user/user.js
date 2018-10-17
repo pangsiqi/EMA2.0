@@ -46,6 +46,7 @@ MgrUser.check = function () {
  * 点击添加管理员
  */
 MgrUser.openAddMgr = function () {
+    console.log(2);
     var index = layer.open({
         type: 2,
         title: '添加管理员',
