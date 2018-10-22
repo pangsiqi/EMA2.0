@@ -9,14 +9,16 @@ $(function(){
 		pass:"jidd"
 	};
 
-	$(".btn").on("click",function(){
+	$(".btn-login").on("click",function(){
 		var userName = $("#username").val();
 		var userPass = $("#password").val();
 		console.log(userName);
 		console.log(userPass);
 		for(var i = 0;i<userinfo.length;i++){
 			if(userName == userinfo[i].name && userPass == userinfo[i].pass){
-				alert("登录成功");
+				console.log(333);
+				
+				console.log(1111);
 				window.location.href="./my_app.html";
 				return;
 			}else{
