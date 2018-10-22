@@ -12,25 +12,31 @@
     <link href="../static/css/font-awesome.css" rel="stylesheet">
     <link href="../static/css/hxqheam-fonts.css" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/common.css" rel="stylesheet">
+
 	</head>
 	<body>
 		<div class="content">
 			<div class="heder">
-				<div class="logo"></div>
-				<ul class="nav pull-left">
-					<li class="current">应用中心</li>
-					<li>程序设计器</li>
-					<li>权限管理</li>
-					<li>系统配置</li>
-				</ul>
-				<div class="nav pull-right nav-right">
-					<div class="userimg"></div>
-					<div class="userInfo">Admin,您好</div>
-					<div class="lingdang"></div>
-				</div>
-				<div class="clear"></div>
-			</div>
+                <div class="logo"></div>
+                <ul class="nav-head pull-left">
+                    <li class="current">应用中心</li>
+                    <li>程序设计器</li>
+                    <li>权限管理</li>
+                    <li>系统配置</li>
+                </ul>
+                <div class="nav-head pull-right nav-right">
+                    <div class="userimg"><i class="icon-order-down"></i></div>
+                    <div class="userInfo">Admin,您好</div>
+                    <div class="lingdang">
+                   <!-- 	<a href="" target="" title="待办任务">-->
+                    		<span class="tips_red" id="todotipscount">5</span>
+                    		<i class="icon-notice"></i>	
+                    <!--	</a>-->
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
 			<div class="neirong">
 		  	<div class="content-neirong">
 		  		<div class="page-tabs-content">我的应用</div>
@@ -56,62 +62,52 @@
 		  		<div class="row">
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  				 </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-device"></i></font>
+			  				  <span class="word">设备管理</span>
+			  			 </span>
 		  			    </a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  			     </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-purchase"></i></font>
+			  				  <span class="word">采购管理</span>
+			  		     </span>
+		  			   
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  			     </div>
+		  				<span class="module">
+			  				  <font class="module_picture"><i class="icon-worklist"></i></font>
+			  				  <span class="word">工单管理</span>
+			  			</span>
+		  			    
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-		  				  </div>
-		  			     </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-inventory-line"></i></font>
+			  				  <span class="word">库存管理</span>
+		  			     </span>
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-		  				  		<div class="module_picture"></div>
-		  				  		<div class="word">设备管理</div>
-		  				  	</div>	
-		  			     </div>
+		  				 <span class="module">
+		  				  		<font class="module_picture"><i class="icon-preventive"></i></font>
+		  				  		<span class="word">预防性维护</span>
+		  			     </span>
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				  <div class="module_neirong">	
-		  				  	<div class="module_picture"></div>
-		  				  	<div class="word">设备管理</div>
-		  				  </div>
-		  				 </div>
+		  				 <span class="module">
+		  				  	<font class="module_picture"><i class="icon-safe"></i></font>
+		  				  	<span class="word">安全管理</span>
+		  				 </span>
 		  			    </a>
 		  			</div>
 		  		</div>
@@ -119,62 +115,80 @@
 		  		<div class="row">
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  				 </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-contract"></i></font>
+			  				  <span class="word">合同管理</span>
+		  				 </font>
 		  			    </a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  			     </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-inspection"></i></font>
+			  				  <span class="word">点巡检</span>
+		  			     </span>
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-			  				</div>
-		  			     </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-reporting"></i></font>
+			  				  <span class="word">故障提报</span>
+		  			     </span>
 		  				</a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-			  				  <div class="module_picture"></div>
-			  				  <div class="word">设备管理</div>
-		  				  </div>
-		  			     </div>
+		  				 <span class="module">
+			  				  <font class="module_picture"><i class="icon-plan"></i></font>
+			  				  <span class="word">作业计划</span>
+		  				  <span>
 		  				</a>
+		  			</div>
+		  				
+		  		
+		  			<div class="col-sm-2">
+		  				<a href="">
+		  				 <span class="module">
+		  				  		<font class="module_picture"><i class="icon-kpi"></i></font>
+		  				  		<span class="word">KPI统计</span>
+		  			     <span>
+		  				</a>
+		  			</div>
+		  			
+		  			<div class="col-sm-2">
+		  				<a href="">
+		  				 <span class="module">
+		  				  	<font class="module_picture"><i class="icon-distribution"></i></font>
+		  				  	<span class="word">派工管理</span>
+		  				 <span>
+		  			  	</a>
+		  		    </div>  
+		  			
+		  		</div>
+		  			<div class="row">
+		  			<div class="col-sm-2">
+		  				<a href="">
+		  				 <span class="module">
+		  				  	<font class="module_picture"><i class="icon-project"></i></font>
+		  				  	<span class="word">项目管理</span>
+		  				 </span>
+		  			    </a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				 	<div class="module_neirong">
-		  				  		<div class="module_picture"></div>
-		  				  		<div class="word">设备管理</div>
-		  				  	</div>	
-		  			     </div>
-		  				</a>
+		  				 <span class="module">
+		  				  	<font class="module_picture"><i class="icon-map"></i></font>
+		  				  	<span class="word">地图</span>
+		  				 </span>
+		  			    </a>
 		  			</div>
 		  			<div class="col-sm-2">
 		  				<a href="">
-		  				 <div class="module">
-		  				  <div class="module_neirong">	
-		  				  	<div class="module_picture"></div>
-		  				  	<div class="word">设备管理</div>
-		  				  </div>
-		  				 </div>
+		  				 <span class="module">
+		  				  	<font class="module_picture"><i class="icon-map"></i></font>
+		  				  	<span class="word">地图</span>
+		  				 </span>
 		  			    </a>
 		  			</div>
 		  		</div>
