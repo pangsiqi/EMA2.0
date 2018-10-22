@@ -8,12 +8,12 @@
     <link href="../static/css/common.css" rel="stylesheet">
     <link rel="shortcut icon" href="../static/favicon.ico">
     <link href="../static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-     <link href="../static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="../static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="../static/css/hxqheam-fonts.css" rel="stylesheet">
     <link href="../static/css/style.css?v=4.1.0" rel="stylesheet">
-    <link href="./common/_container.html" rel="import">
-    <link href="../static/css/hxqheam-fonts.css" rel="stylesheet">
+    <link href="../static/css/common.css" rel="stylesheet">
+    <link href="../static/css/mask_module.css?v=4.1.0" rel="stylesheet">
     <link href="../static/css/plugins/ztree/zTreeStyle.css"rel="stylesheet">
     <!-- 全局js -->
     <script src="../static/js/jquery.min.js?v=2.1.4"></script>
@@ -21,10 +21,10 @@
     <script src="../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="../static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <script src="../static/js/plugins/layer/layer.js"></script>
-    <script src="../static/js/plugins/layer/layer.js"></script>
     
     <!-- 自定义js -->
     <script src="../static/js/hplus.js?v=4.1.0"></script>
+    <script src="../static/js/common/add_user.js"></script>
     <script type="text/javascript" src="../static/js/contabs.js"></script>
     
     <!-- 第三方插件 -->
@@ -32,83 +32,9 @@
     <script src="../static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
     <script src="../static/js/common/tree-table-object.js"></script>
     <script src="../static/js/common/ztree-object.js"></script>
-    <!-- <style type="text/css">
-        .clear{
-            clear:both;
-        }
 
-
-        .content{
-            width:100%;
-            height:100%;
-            background:#F5F8FB;
-        }
-        .heder{
-            width:100%;
-            height:60px;
-            background:linear-gradient(270deg,rgba(147,153,243,1) 0%,rgba(85,123,227,1) 100%);
-            box-shadow:0px 2px 40px 1px rgba(221,229,252,0.5);
-        }
-        .logo{
-            background-image: url(../static/img/logo-white.png);
-            background-size: 100%;
-            width: 138px;
-            min-height: 40px;
-            float: left;
-            margin-top: 10px;
-            position: relative;
-            z-index: 998;
-            margin-left: 25px;
-            
-        }
-        .nav-head{
-            padding-left: 70px!important;
-        }
-        .nav-head li{list-style: none;}
-        .nav-head li{
-            float: left;
-            height:20px;
-            font-size:15px;
-            font-family:PingFangSC-Semibold;
-            font-weight:600;
-            color:rgba(251,253,255,1);
-            line-height:20px;
-            margin-right: 80px;
-            padding:20px 2px;
-            }
-       .nav-head .current{
-            border-top:2px solid #FFF;
-        }
-        .nav-right{
-    height:36px;
-    line-height:36px;
-}
-.nav-right div{float: right;margin: 12px 10px;}
-.lingdang{
-    width:20px;
-    height:24px!important;
-    border:1px solid #fff;
-}   
-.userInfo{
-    width:84px;
-    height:20px;
-    font-size:14px;
-    font-family:PingFangSC-Regular;
-    font-weight:400;
-    color:rgba(251,253,255,1);
-    line-height: 37px;
     
-}
-.userimg{
-    width:40px;
-    height:36px;
-    background-image: url(../static/img/portrait-female.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-    </style> -->
-    <SCRIPT type="text/javascript">
-	
+    <script type="text/javascript">	
 		var setting = {	};
 
 		var zNodes =[
@@ -160,9 +86,46 @@
 
 		$(document).ready(function(){
 			$.fn.zTree.init($("#deptTree"), setting, zNodes);
+			
+			$("navbar-static-side").height(document.body.clientHeight-100);
 		});
 		
-	</SCRIPT>
+	function openAddMgr(){
+//	  layer.open({
+//    type: 2,
+//    area: ['80%', '85%'],
+//    title:,
+//    shadeClose: true, //点击遮罩关闭
+//    content:'http://127.0.0.1:8020/EMA2.0/views/user/user_add.html'
+//  });
+
+	/*$(".mask").width(document.body.clientWidth);
+	$(".mask").height(document.body.clientHeight);*/
+	$(".mask").show();
+	$(".mask_div").show();
+	//放大
+	$(".mask_anniu  .icon-maximization").on("click",function(){
+		$(".mask_div").width(document.body.clientWidth);	
+		$(".mask_div").height(document.body.clientHeight-60);
+		$(".mask_div").css("margin","0%");
+		$(".mask_div").css("top","60px");
+		$(".mask_max .mask_span i").toggleClass("icon-restore",);
+	});
+	//关闭
+	$('.mask_anniu').on('click','.icon-close1',function(){
+				$('.mask_div').hide();
+				$('.mask').hide();
+    });
+    //折叠icon-arrow1-down
+    $('.col_but').on('click','.icon-arrow1-down',function(){
+    	$(this).toggleClass('icon-arrow1-up')/*达到切换背景箭头的效果*/
+    	$(this).parent().parent().next().slideToggle();
+				
+    });
+	
+	}
+		
+	</script>
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
     <!-- header -->
@@ -176,13 +139,18 @@
                     <li>系统配置</li>
                 </ul>
                 <div class="nav-head pull-right nav-right">
-                    <div class="userimg"></div>
+                    <div class="userimg"><i class="icon-order-down"></i></div>
                     <div class="userInfo">Admin,您好</div>
-                    <div class="lingdang"></div>
+                    <div class="lingdang">
+                   <!-- 	<a href="" target="" title="待办任务">-->
+                    		<span class="tips_red" id="todotipscount">5</span>
+                    		<i class="icon-notice"></i>	
+                    <!--	</a>-->
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
-    </div>
+    
     <!-- tab-header -->
         <div class="row content-tabs">
             <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
@@ -214,10 +182,13 @@
         <div id="wrapper">    
         <!--内容部分左侧导航-->
         <nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="nav-close"><i class="fa fa-times-circle"></i>
-    </div>
+		   <!-- <div class="nav-close"><i class="fa fa-times-circle"></i></div>-->
+		    
     <div class="sidebar-collapse">
-                
+    	<div class="navbarbg">
+                    <a class="navbar-minimalize minimalize-styl-2" href="#"><i class="icon-menu1"></i> </a>
+        </div>
+    
         <ul class="nav" id="side-menu">
             <!-- <li>
                 <div>
@@ -381,7 +352,7 @@
                 <div class="fixed-table-toolbar">
                 	<div class="bs-bars pull-left">
                 		<div class="hidden-xs" id="roleTableToolbar" role="group">
-		                <button type="button" class="btn btn-green" onclick="MgrUser.openAddMgr()" id="">
+		                <button type="button" class="btn btn-green" onclick="openAddMgr()" id="">
                                 <i class="icon-add"></i>&nbsp;添加
                        </button>
 						<button type="button" class="btn btn-bule button-margin" onclick="MgrUser.openChangeUser()" id="">
@@ -442,6 +413,10 @@
                 						<label>
                 							<input type="checkbox" data-field="tips" value="6" checked="checked"> 名</label>
                 					</li>
+                					
+                					
+                    
+                					
                 				</ul>
                 			</div>
                 	</div>
@@ -557,10 +532,7 @@
                             <td>5</td>
                             <td>2018-10-16</td>
                         </tr>
-                        
-                       
-                       
-                        
+            
                     </tbody>
                 </table>
                 </div>
@@ -578,110 +550,219 @@
              </div> 
             </div>
             </div>
-            <!-- <div class="span12">
-                <div class="pagination pagination-right">
-                    <ul>
-                        <li><a href="#">上一页</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">下一页</a></li>
-                    </ul>
-                </div>
-            </div> -->
-           
-        </div>  
+       </div> 
+        </div> 
+        
+         </div>	
+    </div>   
+       <!--弹出内容-->
+        
+        <div class="mask" style="display:none;"></div>
+        <div class="mask_div" style="display:none;">	
+        	<!---->
+        	<div class="mask_title_div clearfix">
+        		<div class="mask_title">添加用户</div>
+        		<div class="mask_anniu">
+        			<span class="mask_span"><i class="icon-minimize"></i></span>
+        			<span class="mask_span mask_max"><i class="icon-maximization"></i></span>
+        			<span class="mask_span"><i class="icon-close1"></i></span>
+        		</div>
+        	</div>
+        	<div class="accordion" id="information">
+            <div class="mask_tab-block">
+            <div class="mask_tab-head clearfix">
+            	<div class="accordion_title">
+            		<span class="accordion-toggle">基本信息</a>
+            	</div>
+                <div class="col_but"><i class="icon-arrow1-down"></i></div>
+            </div>
+            <div class="accordion-body tab-content " id="tab-content2">
+                <div class="row-group">
+                
+                	<div class="row row-groups">
+						<label class="col-sm-2" for="">所属组织</label>
+					    <div class="col-sm-10">
+							<input id="" name="" maxlength="200" class="input-large" type="text" value="">
+                       </div>
+                	</div>
+                	<div class="row control-label">
+						<div class="col-sm-6">
+							<label class="col-sm-4" for="">人员姓名</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-6">
+	                        <label class="col-sm-4" for="">排序号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       </div>
+                	</div>
+                	<div class="row row-groups">
+						<label class="col-sm-2" for="">人员姓名</label>
+					    <div class="col-sm-4">
+							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
+                       </div>
+                       <label class="col-sm-2" for="">排序号</label>
+					    <div class="col-sm-4">
+							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
+                       </div>
+                	</div>
+                	<div class="row row-groups">
+						<label class="col-sm-2" for="">登录名称</label>
+					    <div class="col-sm-4">
+							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
+                      </div>
+                       <label class="col-sm-2" for=""><font color="red">*</font>登录口令</label>
+					    <div class="col-sm-4">
+							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
+                      </div>
+                	</div>
+                	<div class="row row-groups">       		    		
+						<label class="col-sm-2" for="">配置状态</label>
+						<div class="col-sm-4 editor-radio-group">
+								<span>
+									<input id="pzzt01" name="pzzt" type="radio" value="否">
+									<label for="pzzt01">否</label>
+								</span>
+								<span>
+									<input id="pzzt02" name="pzzt" type="radio" value="是">
+									<label for="pzzt02">是</label>
+								</span>
+								     
+							</div>
+						<label class="col-sm-2" for="">登录方式</label>
+						<div class="col-sm-4 editor-radio-group">
+								<span>
+									<input id="" name="" type="checkbox" value="">
+									<label for="">口令登录</label>
+								</span>
+								<span>
+									<input id="" name="" type="checkbox" value="">
+									<label for="">Ukey</label>
+								</span>
+								<span>
+									<input id="" name="" type="checkbox" value="">
+									<label for="">数字登录</label>
+								</span>
+						</div>
+           				   
+           				  					
+				
+					</div>	
+			    </div>
+              
+            </div>
+            </div>
+            </div>
+            
+        	<div class="accordion" id="information">
+            <div class="mask_tab-block">
+            <div class="mask_tab-head clearfix">
+            	<div class="accordion_title">
+            		<span class="accordion-toggle">用户基本资料</a>
+            	</div>
+                <div class="col_but"><i class="icon-arrow1-down"></i></div>
+            </div>
+            <div class="accordion-body in collapse tab-content " id="tab-content2">
+                <div class="row-group">
+                	<div class="row control-label">
+						<div class="col-sm-4">
+							<label class="col-sm-4" for="">用户称谓</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">出生日期</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">排序号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       </div>
+                	</div>
+                	
+                	<div class="row control-label">
+						<div class="col-sm-4">
+							<label class="col-sm-4" for="">工号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">入职日期</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">身份证号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                    	</div>
+                	</div>
+                	
+                	<div class="row control-label">
+						<div class="col-sm-4">
+							<label class="col-sm-4" for="">默认身份</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">参加工作时间</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">电子邮箱</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                      </div>
+                	</div>
+                	
+                	<div class="row control-label">
+						<div class="col-sm-4">
+							<label class="col-sm-4" for="">联系电话</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">手机号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       	</div>
+                       	
+                       	<div class="col-sm-4">
+	                        <label class="col-sm-4" for="">传真号</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                      </div>
+                	</div>
+                	
+                	<div class="row control-label">
+                		<div class="col-sm-8">
+							<label class="col-sm-2" for="">地址</label>
+							<input id="" name="" maxlength="200" class="col-sm-10" type="text" value="">
+	                	</div>
+	                   
+	                   	<div class="col-sm-4">
+	                       	<label class="col-sm-4" for=""><font color="red">*</font>邮编</label>
+							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+                       </div>
+                	</div>
+                	<div class="row control-label">
+                		<div class="col-sm-12">
+	                		<label class="col-sm-2" for="">备注</label>
+							<input id="" name="" maxlength="200" class="col-sm-10" type="text" value="">
+						</div>
+                	</div>
+                		
+			    </div>
+              
+            </div>
+            </div>
+            </div>
+        	<!---->
+        </div>
+        </div>
+        
 </body>
         
         <!--右侧边栏开始-->
-<!-- <div id="right-sidebar">
-    <div class="sidebar-container">
 
-        <ul class="nav nav-tabs navs-3">
-            <li class="active"><a data-toggle="tab" href="#tab-1"> <i
-                    class="fa fa-gear"></i> 主题
-            </a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div id="tab-1" class="tab-pane active">
-                <div class="sidebar-title">
-                    <h3>
-                        <i class="fa fa-comments-o"></i> 主题设置
-                    </h3>
-                    <small><i class="fa fa-tim"></i>
-                        你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
-                </div>
-                <div class="skin-setttings">
-                    <div class="title">主题设置</div>
-                    <div class="setings-item">
-                        <span>收起左侧菜单</span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu"
-                                    class="onoffswitch-checkbox" id="collapsemenu"> <label
-                                    class="onoffswitch-label" for="collapsemenu"> <span
-                                    class="onoffswitch-inner"></span> <span
-                                    class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                        <span>固定顶部</span>
-
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="fixednavbar"
-                                    class="onoffswitch-checkbox" id="fixednavbar"> <label
-                                    class="onoffswitch-label" for="fixednavbar"> <span
-                                    class="onoffswitch-inner"></span> <span
-                                    class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                        <span> 固定宽度 </span>
-
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="boxedlayout"
-                                    class="onoffswitch-checkbox" id="boxedlayout"> <label
-                                    class="onoffswitch-label" for="boxedlayout"> <span
-                                    class="onoffswitch-inner"></span> <span
-                                    class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="title">皮肤选择</div>
-                    <div class="setings-item default-skin nb">
-                        <span class="skin-name "> <a href="#" class="s-skin-0">
-                                默认皮肤 </a>
-                        </span>
-                    </div>
-                    <div class="setings-item blue-skin nb">
-                        <span class="skin-name "> <a href="#" class="s-skin-1">
-                                蓝色主题 </a>
-                        </span>
-                    </div>
-                    <div class="setings-item yellow-skin nb">
-                        <span class="skin-name "> <a href="#" class="s-skin-3">
-                                黄色/紫色主题 </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>  -->       <!--右侧边栏结束-->
-       
-   <!--  </div> -->
    
    
 </html>

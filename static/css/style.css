@@ -52,7 +52,11 @@ a:focus {
 .nav > li > a {
     color: white;
     font-weight: 600;
+<<<<<<< HEAD
+    padding: 14px 10px 14px 10px;
+=======
     padding: 14px 15px 14px 15px;
+>>>>>>> 000ef83643449ab551f01d0f9124e7f64f3a7629
 }
 .nav > li > a i[class*=icon-] {
     font-size: 16px;
@@ -469,7 +473,7 @@ body.fixed-sidebar .navbar-static-side,
 body.canvas-menu .navbar-static-side {
     position: fixed;
     width: 220px;
-   /* z-index: 2001;*/
+  /*  z-index: 2001;*/
     height: 100%;
 }
 body.fixed-sidebar.mini-navbar .navbarbg { text-align: center; padding-right:0px; }
