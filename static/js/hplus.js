@@ -43,7 +43,7 @@ $(document).ready(function () {
     //固定菜单栏
     $(function () {
         $('.sidebar-collapse').slimScroll({
-            height: '100%',
+            height: '92%',
             railOpacity: 0.9,
             alwaysVisible: false
         });

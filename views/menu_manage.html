@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>菜单管理</title>
+    <link href="../static/css/common.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link href="../static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../static/css/plugins/bootstrap-treetable/bootstrap-treetable.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="../static/css/hxqheam-fonts.css" rel="stylesheet">
+    <link href="../static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../static/css/hxqheam-fonts.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <!-- 全局js -->
+    <script src="../static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="../static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../static/js/plugins/layer/layer.js"></script>
+    <script src="../static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../static/js/plugins/bootstrap-treetable/bootstrap-treetable.js"></script>
+    <!-- 自定义js -->
+    <script src="../static/js/hplus.js?v=4.1.0"></script>
+    <script type="text/javascript" src="../static/js/contabs.js"></script>
+    <!-- 第三方插件 -->
+    <script src="../static/js/plugins/pace/pace.min.js"></script>
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <!-- header -->
+    <div class="heder">
+        <div class="hederbg">
+                <div class="logo"></div>
+                <ul class="nav-head pull-left white">
+                    <li><a href="my_app.html">应用中心</a></li>
+                    <li><a href="#">程序设计器</a></li>
+                    <li><a href="#">权限管理</a></li>
+                    <li class="current"><a href="menu_manage.html">系统配置</a></li>
+                </ul>
+                <div class="nav-head pull-right nav-right">
+                    <div class="userimg"></div>
+                    <div class="userInfo">Admin,您好</div>
+                    <div class="lingdang"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <!-- tab-header -->
+    <div class="content-tabs">
+        <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+        </button>
+        <nav class="page-tabs J_menuTabs">
+            <div class="page-tabs-content">
+                <a href="javascript:;" class="active J_menuTab" data-id="/blackboard">首页</a>
+            </div>
+        </nav>
+        <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+        </button>
+        <div class="btn-group roll-nav roll-right">
+            <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+            </button>
+            <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                </li>
+                <li class="divider"></li>
+                <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                </li>
+                <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                </li>
+            </ul>
+        </div>
+        <a href="./login.html" class="roll-nav roll-right J_tabExit"><i class="icon-back"></i>返回</a>
+    </div>
+        
+    </div>
+    <!-- 内容部分 -->
+        <div id="wrapper">    
+        <!--内容部分左侧导航-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <div class="navbarbg">
+                    <a class="navbar-minimalize minimalize-styl-2" href="#"><i class="icon-menu1"></i> </a>
+                </div>
+                <ul class="nav" id="side-menu">               
+                    <li>
+                        <a class="J_menuItem" href="/notice/hello" name="tabMenuItem">
+                            <i class="icon-user"></i>
+                            <span class="nav-label">用户管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="/swagger-ui.html" name="tabMenuItem">
+                            <i class="icon-role-site"></i>
+                            <span class="nav-label">角色管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-department"></i>
+                            <span class="nav-label">部门管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-menu2"></i>
+                            <span class="nav-label">菜单管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-wordbook"></i>
+                            <span class="nav-label">字典管理</span>
+                        </a>                        
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="/notice/hello" name="tabMenuItem">
+                            <i class="icon-log"></i>
+                            <span class="nav-label">业务日志</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="/swagger-ui.html" name="tabMenuItem">
+                            <i class="icon-login-log"></i>
+                            <span class="nav-label">登录日志</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-monitor"></i>
+                            <span class="nav-label">监控管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-notice"></i>
+                            <span class="nav-label">通知管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-data"></i>
+                            <span class="nav-label">数据库配置</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-time"></i>
+                            <span class="nav-label">定时任务</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="./system/code/code.html" name="tabMenuItem">
+                            <i class="icon-word"></i>
+                            <span class="nav-label">Word测试</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>        <!--左侧导航结束-->        
+        <!-- 内容部分的导航对应内容 -->
+        <div id="page-wrapper" class="J_iframe gray-bg dashbard-1"> 
+          <div class="row J_mainContent" id="content-main">
+            <div class="wrapper wrapper-content">
+             <div class="row">          
+                <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                <div class="row row-lg">
+                <div class="col-sm-12">
+                <div class="row">
+                            <!-- 操作按钮 -->
+                <div class="fixed-table-toolbar">
+                    <div class="bs-bars pull-left ml10">
+                        <div class="hidden-xs" id="roleTableToolbar" role="group">
+                        <button type="button" class="btn btn-green" onclick="" id="">
+                                <i class="icon-add"></i>&nbsp;添加
+                       </button>
+                        <button type="button" class="btn btn-bule button-margin" onclick="" id="">
+                            <i class="icon-edit"></i>&nbsp;修改
+                        </button>
+                        <button type="button" class="btn btn-red button-margin" onclick="" id="">
+                            <i class="icon-trash"></i>&nbsp;删除
+                        </button>
+                        <button type="button" class="btn btn-primarys button-margin" onclick="" id="">
+                            <i class="icon-key"></i>&nbsp;权限配置
+                        </button>
+                        <button type="button" class="btn btn-primarys button-margin" onclick="" id="">
+                            <i class="icon-data"></i>&nbsp;数据范围
+                        </button>
+                        <button type="button" class="btn btn-primarys button-margin" onclick="" id="">
+                            <i class="icon-data"></i>&nbsp;数据限制
+                        </button>
+                        <button type="button" class="btn btn-primarys button-margin" onclick="btn()" id="search">
+                            <i class="icon-search"></i>&nbsp;高级查询&nbsp;<i class="icon-arrow1-down"></i>&nbsp;
+                        </button>
+                        </div>    
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+
+                        $("#idsss").click(function () {
+                            var check_box = $(".open ul li").eq(1).find("input[type=checkbox]");
+                            // console.log(check_box);
+                            // console.log(check_box.is(":checked"));
+                            // if(check_box.is(":checked")){
+                            //     console.log(check_box.is(":checked"));
+                            //    $("table thead tr th").eq(1).show();
+                            //     console.log(2);
+                            // }else{
+                            //     $("table thead tr th").eq(1).hide();
+                            //     console.log(1);
+                            // }
+$('#idsss').click(function(){
+        var check = this.checked;
+        if (!check){
+             $("table thead tr th").eq(1).hide();
+        }
+        else{
+            $("table thead tr th").eq(1).show();
+        }
+    });  
+                        });
+                    });
+                    </script>
+                    <div class="columns columns-right btn-group pull-right mr10">
+                        <button class="btn btn-default btn-outline" type="button" name="refresh" aria-label="refresh" title="刷新">
+                            <i class="glyphicon glyphicon-repeat"></i></button><div class="keep-open btn-group" title="列">
+                                <button type="button" aria-label="columns" class="btn btn-default btn-outline dropdown-toggle" data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-list"></i> 
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu mt5" role="menu">
+                                    <li role="menuitem">
+                                        <label>
+                                            <input id="idsss" type="checkbox" data-field="id" value="1" checked="checked"> ID
+                                        </label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="name" value="2" checked="checked"> 菜单名称
+                                        </label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 菜单编号</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 菜单父编号</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 请求地址</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 排序</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 层级</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 是否是主菜单</label>
+                                    </li>
+                                    <li role="menuitem">
+                                        <label>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 状态</label>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    function btn(){
+                        $("#box").toggle();
+                        var search_icon = $("#search i").eq(1).attr("class");
+                        // console.log(search_icon);
+                        if (search_icon == "icon-arrow1-down") {
+                            $("#search i").eq(1).removeClass();
+                            $("#search i").eq(1).addClass("icon-arrow1-up");
+                        }else{
+                            $("#search i").eq(1).removeClass();
+                            $("#search i").eq(1).addClass("icon-arrow1-down");
+                        }
+                        
+                    }
+                </script>
+                <!--高级查询-->
+                <div class="form-horizontal" id="box" style="display:none">
+                    <div class="div-contents"  style="margin-top: 10px">
+                    <div class="row row-lg">
+                    <div class="col-sm-12">
+                    <div class="form-horizontal search-content" id="generate">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">菜单名称</span>
+                                    <input class="form-control search-input" id="author" name="author" type="text" style="border: 1px solid #D8DEE6;width: 180px;">
+                            </div>
+                        </div> 
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">层级</span>
+                                    <input class="form-control search-input" id="author" name="author" type="text" style="border: 1px solid #D8DEE6;width: 180px;">
+                            </div>
+                        </div>                       
+                    </div>
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <!--高级查询-->
+                <div style="margin-left: 17px;margin-top: 10px;margin-right: 2px" class="bootstrap-tree-table fixed-table-container mr10"><!-- id="contentTable"-->
+                     <table id="DeptTable" data-mobile-responsive="true" data-click-to-select="true" class="table table-hover treetable-table table-bordered table-striped" >
+                    <thead class="treetable-thead">
+                        <tr>
+                            <th class="bs-checkbox " data-field="selectItem">
+                                <div class="th-inner ">全选</div><div class="fht-cell" style="width: 36px;"></div>
+                            </th>
+                            <th style="" data-field="name">
+                                <div class="th-inner sortable both asc">ID</div>
+                                <div class="fht-cell" style="width: 103px;"></div>
+                            </th>
+                            <th style="" data-field="name">
+                                <div class="th-inner sortable both asc">菜单名称</div>
+                                <div class="fht-cell" style="width: 103px;"></div>
+                            </th>
+                            <th style="" data-field="pName">
+                                <div class="th-inner sortable both">菜单编号</div>
+                                <div class="fht-cell" style="width: 103px;"></div>
+                            </th>
+                            <th style=" " data-field="deptName">
+                                <div class="th-inner sortable both">菜单父编号</div>
+                                <div class="fht-cell" style="width: 103px;"></div>
+                            </th>
+                            <th style=" " data-field="companyName">
+                                <div class="th-inner sortable both">请求地址</div>
+                                <div class="fht-cell" style="width: 104px;"></div>
+                            </th>
+                            <th style=" " data-field="companyName">
+                                <div class="th-inner sortable both">排序</div>
+                                <div class="fht-cell" style="width: 104px;"></div>
+                            </th>
+                            <th style=" " data-field="companyName">
+                                <div class="th-inner sortable both">层级</div>
+                                <div class="fht-cell" style="width: 104px;"></div>
+                            </th>
+                            <th style=" " data-field="companyName">
+                                <div class="th-inner sortable both">是否是主菜单</div>
+                                <div class="fht-cell" style="width: 104px;"></div>
+                            </th>
+                            <th style=" " data-field="companyName">
+                                <div class="th-inner sortable both">状态</div>
+                                <div class="fht-cell" style="width: 104px;"></div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="treetable-tbody">
+                        <tr class="tg-0" style="display: table;">
+                            <td class="bs-checkbox">
+                                <input type="checkbox" id="checkall" name="checkall">
+                            </td>
+                            <td>超级管理员</td>
+                            <td title="总公司" name="fullname" style=""><span class="treetable-expander glyphicon glyphicon-chevron-down" onclick="btn1()"></span>总公司</td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>超级管理员</td>
+                            <td></td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr class="tg-24" style="display: table;">
+                            <td class="bs-checkbox">
+                                <input type="checkbox" id="checkall" name="checkall">
+                            </td>
+                            <td>超级管理员</td>
+                            <td title="总公司" name="fullname" style=""><span class="treetable-indent"></span><span class="treetable-expander glyphicon glyphicon-chevron-down" onclick="btn2()"></span>总公司</td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>超级管理员</td>
+                            <td></td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>administrator</td>
+                        </tr>
+                        <tr class="tg-29" style="display: table;">
+                            <td class="bs-checkbox">
+                                <input type="checkbox" id="checkall" name="checkall">
+                            </td>
+                            <td>超级管理员</td>
+                            <td title="测试分公司" name="fullname" style=""><span class="treetable-indent"></span><span class="treetable-indent"></span><span class="treetable-expander glyphicon glyphicon-chevron-down"></span>测试分公司</td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>超级管理员</td>
+                            <td></td>
+                            <td>总公司</td>
+                            <td>administrator</td>
+                            <td>administrator</td>
+                        </tr> 
+                    </tbody>
+                </table>
+               <!--  <script type="text/javascript">
+
+                    function btn1(){
+                        var class1 = $(".tg-0 td").eq(2).find("span").attr("class");
+                        if (class1 == ) {
+                            console.log(1);
+                            $(".tg-24").css("display", "none");
+                            $(".tg-29").css("display", "none");
+                        }else{
+                            $(".tg-24").css("display", "table");
+                            $(".tg-29").css("display", "table");
+                        }
+                        
+                    }
+                    function btn2(){
+                        $(".tg-29").css("display", "none");
+                    }
+                </script> -->
+                </div>
+                <div style="float:left;margin-left: 17px;margin-top:10px;display: inline;">
+                    <p>显示第1到15条记录，共43条记录</p>
+                </div>
+                <div style="float: right;margin-top: -12px;margin-bottom: 55px;" class="mr10">
+                    <ul class="pagination">
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- 点击添加按钮的弹出框 -->
+    <!-- <div class="row-fluid">
+        <div id="modal-container-50148" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">
+                        标题栏
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        显示信息
+                    </p>
+                </div>
+                <div class="modal-footer">
+                     <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button> <button class="btn btn-primary">保存设置</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+</body>
+</html>
