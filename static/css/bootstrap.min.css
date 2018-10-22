@@ -8,7 +8,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 html {
-	font-family: sans-serif;
+	font-family: "microsoft yahei", "PingFangSC-Regular", "heiti", "Arial", "Helvetica", "sans-serif", "songti";
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%
 }
@@ -16,6 +16,9 @@ html {
 body {
 	margin: 0
 }
+
+li{list-style: none;}
+
 
 article,
 aside,
@@ -1792,7 +1795,7 @@ a.bg-danger:hover {
 ol,
 ul {
 	margin-top: 0;
-	margin-bottom: 10px
+	margin-bottom: 0px
 }
 
 ol ol,
@@ -1804,13 +1807,13 @@ ul ul {
 
 .list-unstyled {
 	padding-left: 0;
-	list-style: none
+	
 }
 
 .list-inline {
 	padding-left: 0;
 	margin-left: -5px;
-	list-style: none
+	
 }
 
 .list-inline>li {
@@ -4270,7 +4273,7 @@ tbody.collapse.in {
 	margin: 2px 0 0;
 	font-size: 14px;
 	text-align: left;
-	list-style: none;
+	;
 	background-color: #fff;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -4797,7 +4800,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav {
 	padding-left: 0;
 	margin-bottom: 0;
-	list-style: none
+	
 }
 
 .nav>li {
@@ -5635,7 +5638,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .breadcrumb {
 	padding: 8px 15px;
 	margin-bottom: 20px;
-	list-style: none;
+	;
 	background-color: #f5f5f5;
 	border-radius: 4px
 }
@@ -5768,7 +5771,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 	padding-left: 0;
 	margin: 20px 0;
 	text-align: center;
-	list-style: none
+	
 }
 
 .pager li {
@@ -6288,7 +6291,7 @@ a.thumbnail:hover {
 
 .media-list {
 	padding-left: 0;
-	list-style: none
+	
 }
 
 .list-group {
@@ -7638,7 +7641,7 @@ button.close {
 	padding-left: 0;
 	margin-left: -30%;
 	text-align: center;
-	list-style: none
+	
 }
 
 .carousel-indicators li {

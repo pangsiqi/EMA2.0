@@ -24,7 +24,9 @@
      margin-top: 10px;
 }
 .tab-head{
-     background-color: #DFE5EA;
+     background:linear-gradient(180deg,rgba(250,251,253,1) 0%,rgba(243,246,250,1) 100%);
+    border-radius:4px 4px 0px 0px;
+    border:1px solid rgba(223,229,234,1);
 }
 .tab-content{
      background:white;
@@ -39,3 +41,6 @@
     font-size: 1px;
     line-height: 0px;
 } 
+. div-contents{
+      margin-top: 10px;
+}

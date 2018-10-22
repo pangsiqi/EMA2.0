@@ -8,6 +8,7 @@
  */
 function extracted($, item, target, globalCollapsedFlag, options) {
     var itemCodeName = $(item).find("td[name='code']").text();
+    console.log($(item));
     var subItems = target.find("tbody").find(".tg-" + itemCodeName);//下一级，改为下所有级别
 
     if (subItems.size() > 0) {

@@ -52,7 +52,11 @@ a:focus {
 .nav > li > a {
     color: white;
     font-weight: 600;
+<<<<<<< HEAD
     padding: 14px 10px 14px 10px;
+=======
+    padding: 14px 15px 14px 15px;
+>>>>>>> 000ef83643449ab551f01d0f9124e7f64f3a7629
 }
 .nav > li > a i[class*=icon-] {
     font-size: 16px;
@@ -477,7 +481,7 @@ body.fixed-sidebar.mini-navbar .navbar-static-side {
     width: 40px;
     border-right: 1px solid #DFE5EA;
 }
-
+body.fixed-sidebar.mini-navbar .nav > li > a {padding-left:10px; padding-right:10px;}
 body.fixed-sidebar.mini-navbar #page-wrapper {
     margin: 0 0 0 70px;
 }
