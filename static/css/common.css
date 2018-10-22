@@ -277,6 +277,11 @@ nav.page-tabs {
     border-color: #37CCB1;
     color: #FFFFFF;
 }
+.btn-gray{
+    background-color: #A2AEBE;
+    border-color: #A2AEBE;
+    color: #FFFFFF;
+}
 .btn-bule{
     background-color:#46ACE3;
     border-color: #46ACE3;
