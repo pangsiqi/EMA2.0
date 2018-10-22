@@ -17,7 +17,7 @@ $(function(){
 		for(var i = 0;i<userinfo.length;i++){
 			if(userName == userinfo[i].name && userPass == userinfo[i].pass){
 				alert("登录成功");
-				window.location.href="./index.html";
+				window.location.href="./my_app.html";
 				return;
 			}else{
 				alert("用户名或密码错误");
