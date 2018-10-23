@@ -239,43 +239,59 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu mt5" role="menu">
-                                    <li role="menuitem">
-                                        <label>
-                                            <input id="idsss" type="checkbox" data-field="id" value="1" checked="checked"> ID
-                                        </label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+	                                        <input id="idsss" type="checkbox" data-field="id" value="1" checked="checked">
+	                                        <label for="idsss">ID</label>
+                                        </span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="name" value="2" checked="checked"> 菜单名称
-                                        </label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                            <input type="checkbox" data-field="name" value="2" checked="checked">
+                                            <label for="">菜单名称</label>
+                                        </span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 菜单编号</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                        <span>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked">
+                                            <label for="">菜单编号</label>
+                                        </span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 菜单父编号</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                            <input type="checkbox" data-field="pName" value="3" checked="checked">
+                                            <label>菜单父编号</label>
+                                    	</span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 请求地址</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                    		<input type="checkbox" data-field="pName" value="3" checked="checked"> 
+                                        	<label>请求地址</label>
+                                    	</span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 排序</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                    		<input type="checkbox" data-field="pName" value="3" checked="checked">
+                                        	<label>排序</label>
+                                    	</span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 层级</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                    		<input type="checkbox" data-field="pName" value="3" checked="checked"> 
+                                        	<label>层级</label>
+                                    	</span>
                                     </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 是否是主菜单</label>
-                                    </li>
-                                    <li role="menuitem">
-                                        <label>
-                                            <input type="checkbox" data-field="pName" value="3" checked="checked"> 状态</label>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                    		<input type="checkbox" data-field="pName" value="3" checked="checked">
+                                        	<label>是否是主菜单</label>
+                                        </span>    
+          	                          </li>
+                                    <li class="checkbox-group" role="menuitem">
+                                    	<span>
+                                    		<input type="checkbox" data-field="pName" value="3" checked="checked"> 
+                                        	<label>状态</label>
+                                        </span>    
                                     </li>
                                 </ul>
                             </div>
@@ -312,7 +328,7 @@
                      <table id="DeptTable" data-mobile-responsive="true" data-click-to-select="true" class="table table-hover treetable-table table-bordered table-striped" >
                     <thead class="treetable-thead">
                         <tr>
-                            <th class="bs-checkbox " data-field="selectItem">
+                            <th class="checkbox-group " data-field="selectItem">
                                 <div class="th-inner ">全选</div><div class="fht-cell" style="width: 36px;"></div>
                             </th>
                             <th style="" data-field="name">
@@ -355,9 +371,12 @@
                     </thead>
 
                     <tbody class="treetable-tbody">
-                        <tr class="tg-0" style="display: table;">
-                            <td class="bs-checkbox">
-                                <input type="checkbox" id="checkall" name="checkall">
+                        <tr class="tg-0">
+                            <td class="checkbox-group">
+                                <span>
+                                	<input type="checkbox" id="checkall" name="checkall">
+                                	<label for=""></label>
+                                </span>
                             </td>
                             <td>超级管理员</td>
                             <td title="总公司" name="fullname" style=""><span class="treetable-expander glyphicon glyphicon-chevron-down" onclick="btn1()"></span>总公司</td>
@@ -369,9 +388,12 @@
                             <td>administrator</td>
                             <td>administrator</td>
                         </tr>
-                        <tr class="tg-24" style="display: table;">
-                            <td class="bs-checkbox">
-                                <input type="checkbox" id="checkall" name="checkall">
+                        <tr class="tg-24">
+                            <td class="checkbox-group">
+                                <span>
+                                	<input type="checkbox" id="checkall" name="checkall">
+                                	<label for=""></label>
+                                </span>
                             </td>
                             <td>超级管理员</td>
                             <td title="总公司" name="fullname" style=""><span class="treetable-indent"></span><span class="treetable-expander glyphicon glyphicon-chevron-down" onclick="btn2()"></span>总公司</td>
@@ -383,9 +405,12 @@
                             <td>administrator</td>
                             <td>administrator</td>
                         </tr>
-                        <tr class="tg-29" style="display: table;">
-                            <td class="bs-checkbox">
-                                <input type="checkbox" id="checkall" name="checkall">
+                        <tr class="tg-29">
+                            <td class="checkbox-group">
+                                <span>
+                                	<input type="checkbox" id="checkall" name="checkall">
+                                	<label></label>
+                                </span>
                             </td>
                             <td>超级管理员</td>
                             <td title="测试分公司" name="fullname" style=""><span class="treetable-indent"></span><span class="treetable-indent"></span><span class="treetable-expander glyphicon glyphicon-chevron-down"></span>测试分公司</td>

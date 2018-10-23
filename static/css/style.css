@@ -2763,7 +2763,6 @@ body {
 body.full-height-layout #wrapper,
 body.full-height-layout #page-wrapper {
     height: 100%;
-    background-color: #F5F8FB;
 }
 
 #page-wrapper {
@@ -3093,7 +3092,7 @@ nav.page-tabs .page-tabs-content {
 .page-tabs a {
     display: block;
     float: left;
-    border-right: solid 1px #eee;
+    border: solid 1px #DFE5EA;
     padding: 0 15px;
 }
 
@@ -3104,7 +3103,6 @@ nav.page-tabs .page-tabs-content {
 .page-tabs a:hover,
 .content-tabs .roll-nav:hover {
     color: #777;
-    background: #f2f2f2;
     cursor: pointer;
 }
 
@@ -3170,11 +3168,11 @@ nav.page-tabs .page-tabs-content {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-    border: 1px solid #e7e7e7;
+    border: 1px solid #F0F0F0;
 }
 
 .table > thead > tr > th {
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #F0F0F0;
     vertical-align: bottom;
 }
 
@@ -3184,10 +3182,14 @@ nav.page-tabs .page-tabs-content {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-    border-top: 1px solid #e7eaec;
+    border-top: 1px solid #F0F0F0;
     line-height: 1.42857;
     padding: 8px;
     vertical-align: middle;
+}
+
+.table > tbody > tr:nth-of-type(even) {
+	background-color: #F5F7FA;
 }
 
 
@@ -3574,7 +3576,7 @@ table.table-mail tr td {
     background:linear-gradient(270deg,rgba(147,153,243,1) 0%,rgba(89,126,229,1) 100%);
 }
 .gray-bg {
-    background-color: #f3f3f4;
+    background-color: #F5F8FB;
 }
 
 .white-bg {
@@ -6649,26 +6651,23 @@ body.rtls.top-navigation .footer.fixed {
     margin-top: 7px;
     margin-left: 15px;
     border-radius: 5px;
-    background: white;
+    background: #fff;
 }
 
 .page-tabs a i {
-    color: #ccc;
+    color: #E97A9B;
 }
 
 .page-tabs a.active {
     background: linear-gradient(360deg,rgba(232,236,240,1) 0%,rgba(255,255,255,1) 100%);
-    color: rgb(120,140,236);
+    color: #6585DF;
     margin-top: 6px;
     border-radius: 5px 5px;
     margin-left: 17px;
+    box-shadow:0px -2px 3px 0px rgba(176,192,237,0.2);
 }
 
-.page-tabs a.active:hover,
-.page-tabs a.active i:hover {
-    background: rgb(111,144,236);
-    color: #fff;
-}
+
 
 
 /*
@@ -7295,14 +7294,13 @@ body.skin-3 {
     }
 }
 
-.tab-menu-selected {
-    background-color: #6183E2 !important;
-    color: white !important;
-}
+
 /*ztree*/
 
 .fixed-table-container{
-    background:rgba(245,248,251,1);
+    background:#FFFFFF;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.03);
+    border-radius: 4px;
 }
 
 /*.fixed-table-toolbar{
@@ -7313,14 +7311,58 @@ body.skin-3 {
     background-color: #fff!important;
     border-color: #F0F0F0!important;
 }
-.bootstrap-table td{
-    padding:0px!important;
+
+
+
+/*-------------------Changes Checkbox And Radio--------------------------*/
+.checkbox-group span, .radio-group span {
+    display: inline-block;
 }
-.bootstrap-table  .bs-checkbox label:before{
+
+.checkbox-group span,.radio-group span{
+	font-size:12px;
+	 color: #636467;
+}
+.form-horizontal .checkbox-group span,.form-horizontal .radio-group span{
+	margin-right: 40px;
+}
+.editor-groups span:last-child {margin-right: 0px !important;}
+
+.checkbox-group span,.radio-group span {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    line-height: initial !important;
+    height: auto;
+}
+
+td.checkbox-group span,td.radio-group span,th.checkbox-group span,th.radio-group span {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+
+
+/* 将初始的checkbox的样式改变 */
+.checkbox-group span input[type="checkbox"],.radio-group span input[type="radio"] {
+    opacity: 0;/*将初始的checkbox隐藏起来*/
+    position: absolute;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 2;
+    left: 10px;
+    margin-left: 3px!important;
+}
+
+
+
+/* 设计新的checkbox位置 */
+.checkbox-group span label:before,.radio-group span label:before {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     margin-top: -9px;
     width: 19px;
     height: 18px;
@@ -7329,24 +7371,74 @@ body.skin-3 {
     border: 1px solid #b4d2ea;
     background: #fff;
 }
-.bs-checkbox input[type="checkbox"]:checked +label:after{
+
+
+/* 点击初始的checkbox，将新的checkbox关联起来 */
+.checkbox-group span input[type="checkbox"]:checked +label:after,.radio-group span input[type="radio"]:checked +label:after {
     position: absolute;
     display: inline-block;
     content: '';
     top: 50%;
-    left: 0px;
+    left: 10px;
     margin-top: -9px;
-    margin-top: 15px;
+    *margin-top: 15px;
     font-size: 12px;
     line-height: 15px;
     width: 19px;
     height: 18px;
     color: #56a8ec;
+    /* background: url(checkbox_focus.gif) center no-repeat; */
     border: 2px solid #56a8ec;
-    content: '√';
+    content: '√';/*\e931*/
     font-weight: bold;
     text-align: center;
     font-family: "Microsoft YaHei";
     border-radius: 3px;
 }
 
+.radio-group span label:before,.radio-group span input[type="radio"]:checked +label:after {width: 18px; border-radius: 100%;}
+.radio-group span input[type="radio"]:checked +label:after {/* background: url(radio_focus.png) center no-repeat; */ content:'●';/*\e930*/ text-align:center; border: 2px solid #FF9900; line-height: 12px; color:#FF9900;}
+
+.checkbox-group span label,.radio-group span label {
+    cursor: pointer;
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-align: left;
+    height:auto;
+}
+
+
+
+
+.checkbox-group.option-list-item span input[type="checkbox"],.radio-group.option-list-item span input[type="radio"] { margin-top: -12px;  margin-top: -14px\0; *margin-top: -14px;}
+
+.checkbox-group.option-list-item span label,.radio-group.option-list-item span label {margin-left: 10px;}
+
+.checkbox-group.option-list-item span label:before, .radio-group.option-list-item span label:before {margin-top: -15px;}
+.checkbox-group.option-list-item span input[type="checkbox"]:checked +label:after, .radio-group.option-list-item span input[type="radio"]:checked +label:after {margin-top: -15px;}
+
+
+
+
+
+.checkbox-group span input[type="checkbox"]:disabled +label:before,.checkbox-group span input[type="checkbox"]:disabled +label:after,.radio-group span input[type="radio"]:disabled +label:before,.radio-group span input[type="radio"]:disabled +label:after {
+    color: #848484!important;
+    background-color: #EEE !important;
+    border: 1px solid #CCC !important;
+}
+
+.checkbox-group span input[type="checkbox"]:checked:disabled +label:before,.checkbox-group span input[type="checkbox"]:checked:disabled +label:after{
+	/* background: url(checkbox_focus_read.gif) center no-repeat; */ content:'√'; color:"#999999"; border: 2px solid #cccccc;
+}
+
+.radio-group span input[type="radio"]:checked:disabled +label:before,.radio-group span input[type="radio"]:checked:disabled +label:after{
+	/* background: url(radio_focus_read.png) center no-repeat; */ content:'●'; line-height:15px; color:"#999999"; border: 2px solid #cccccc;
+}
+
+
+.checkbox-group span input[type="checkbox"]:disabled +label:after,.radio-group span input[type="radio"]:disabled +label:after  {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(0,0,0,0.3);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(0,0,0,0.3);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(0,0,0,0.3)
+}
