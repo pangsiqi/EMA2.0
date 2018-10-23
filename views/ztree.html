@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <title>二级菜单主页</title>
     <link href="../static/css/common.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../static/favicon.ico">
+   <!-- <link rel="shortcut icon" href="../static/favicon.ico">-->
     <link href="../static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="../static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="../static/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
@@ -32,9 +32,12 @@
     <script src="../static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
     <script src="../static/js/common/tree-table-object.js"></script>
     <script src="../static/js/common/ztree-object.js"></script>
-
+    <script src="../static/js/plugins/laydate/laydate.js"></script>
     
     <script type="text/javascript">	
+    	
+    	
+    	
 		var setting = {	};
 
 		var zNodes =[
@@ -90,27 +93,38 @@
 			$("navbar-static-side").height(document.body.clientHeight-100);
 		});
 		
-	function openAddMgr(){
-//	  layer.open({
-//    type: 2,
-//    area: ['80%', '85%'],
-//    title:,
-//    shadeClose: true, //点击遮罩关闭
-//    content:'http://127.0.0.1:8020/EMA2.0/views/user/user_add.html'
-//  });
-
-	/*$(".mask").width(document.body.clientWidth);
-	$(".mask").height(document.body.clientHeight);*/
-	$(".mask").show();
-	$(".mask_div").show();
-	//放大
-	$(".mask_anniu  .icon-maximization").on("click",function(){
+		// 页面初始化
+$(function () {
+    // 最大化 || 还原
+    $(".icon-maximization").bind("click", maxDialog);
+    $(".icon-restore").bind("click", rebackDialog);
+});
+	function maxDialog() {
 		$(".mask_div").width(document.body.clientWidth);	
 		$(".mask_div").height(document.body.clientHeight-60);
 		$(".mask_div").css("margin","0%");
 		$(".mask_div").css("top","60px");
-		$(".mask_max .mask_span i").toggleClass("icon-restore",);
-	});
+		$(this).removeClass("icon-maximization").addClass("icon-restore");
+		$(".icon-restore").unbind("click").bind("click", rebackDialog);
+//		$(".mask_max  i").removeClass('icon-maximization');
+//		$(".mask_max  i").addClass('icon-restore');
+//		
+	}
+	//还原按钮
+	function rebackDialog() {
+   $(".mask_div").css("width","80%");
+    	$(".mask_div").css("height","80%");
+        $(".mask_div").css("margin","7% 10%");
+    	$(".mask_div").css("top","0");
+
+    $(this).removeClass("icon-restore").addClass("icon-maximization");
+    $(".icon-maximization").unbind("click").bind("click", maxDialog);
+}	
+	function openAddMgr(){
+	$(".mask").show();
+	$(".mask_div").show();
+	
+	}
 	//关闭
 	$('.mask_anniu').on('click','.icon-close1',function(){
 				$('.mask_div').hide();
@@ -123,8 +137,12 @@
 				
     });
 	
-	}
-		
+	
+	//data
+
+  laydate.render({
+  elem: '#test1' //指定元素
+  });
 	</script>
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -577,61 +595,60 @@
                 <div class="col_but"><i class="icon-arrow1-down"></i></div>
             </div>
             <div class="accordion-body tab-content " id="tab-content2">
-                <div class="row-group">
-                
-                	<div class="row row-groups">
-						<label class="col-sm-2" for="">所属组织</label>
-					    <div class="col-sm-10">
-							<input id="" name="" maxlength="200" class="input-large" type="text" value="">
+                	<div class="row control-label">
+                		<div class="col-sm-12">
+							<label for="">所属组织</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        </div>
                 	</div>
                 	<div class="row control-label">
 						<div class="col-sm-6">
-							<label class="col-sm-4" for="">人员姓名</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+							<label for="">人员姓名</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-6">
-	                        <label class="col-sm-4" for="">排序号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">排序号</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        </div>
                 	</div>
-                	<div class="row row-groups">
-						<label class="col-sm-2" for="">人员姓名</label>
-					    <div class="col-sm-4">
-							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
-                       </div>
-                       <label class="col-sm-2" for="">排序号</label>
-					    <div class="col-sm-4">
-							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
-                       </div>
+                	<div class="row control-label">
+                	 <div class="col-sm-6">
+						<label for="">人员姓名</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
+                     </div>
+                     <div class="col-sm-6">
+                       <label  for="">排序号</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
+                	 </div>
                 	</div>
-                	<div class="row row-groups">
-						<label class="col-sm-2" for="">登录名称</label>
-					    <div class="col-sm-4">
-							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
-                      </div>
-                       <label class="col-sm-2" for=""><font color="red">*</font>登录口令</label>
-					    <div class="col-sm-4">
-							<input id="" name="" maxlength="200" class="input-small" type="text" value="">
-                      </div>
+                	<div class="row control-label">
+						 <div class="col-sm-6">                		
+						    <label  for="">登录名称</label>
+							<input id="" name="" maxlength="200"  class="col-sm-12" type="text" value="">
+                        </div>
+                         <div class="col-sm-6"> 
+                       		<label for=""><font color="red">*</font>登录口令</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
+                         </div>
                 	</div>
-                	<div class="row row-groups">       		    		
-						<label class="col-sm-2" for="">配置状态</label>
-						<div class="col-sm-4 editor-radio-group">
-								<span>
+                	<div class="row control-label"> 
+                		<div class="col-sm-6 editor-radio-group">
+						    <label for="">配置状态</label>
+						
+								<!--<span>
 									<input id="pzzt01" name="pzzt" type="radio" value="否">
 									<label for="pzzt01">否</label>
 								</span>
 								<span>
 									<input id="pzzt02" name="pzzt" type="radio" value="是">
 									<label for="pzzt02">是</label>
-								</span>
+								</span>-->
 								     
-							</div>
-						<label class="col-sm-2" for="">登录方式</label>
-						<div class="col-sm-4 editor-radio-group">
-								<span>
+						</div>
+						<div class="col-sm-6 editor-radio-group">
+						<label for="">登录方式</label>
+								<!--<span>
 									<input id="" name="" type="checkbox" value="">
 									<label for="">口令登录</label>
 								</span>
@@ -642,13 +659,12 @@
 								<span>
 									<input id="" name="" type="checkbox" value="">
 									<label for="">数字登录</label>
-								</span>
+								</span>-->
 						</div>
            				   
            				  					
 				
 					</div>	
-			    </div>
               
             </div>
             </div>
@@ -663,99 +679,105 @@
                 <div class="col_but"><i class="icon-arrow1-down"></i></div>
             </div>
             <div class="accordion-body in collapse tab-content " id="tab-content2">
-                <div class="row-group">
+                
                 	<div class="row control-label">
 						<div class="col-sm-4">
-							<label class="col-sm-4" for="">用户称谓</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+							<label for="" >用户称谓</label>
+							<input id="" class="col-sm-12"name="" maxlength="200" class="" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">出生日期</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label  for="">出生日期</label>
+							<input id="test1" class="col-sm-12" name=""  value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">排序号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">排序号</label>
+							<input id="" class="col-sm-12"name="" maxlength="200" type="text" value="">
                        </div>
                 	</div>
                 	
                 	<div class="row control-label">
 						<div class="col-sm-4">
-							<label class="col-sm-4" for="">工号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+							<label for="">工号</label>
+							<input id="" class="col-sm-12" name="" maxlength="200" class="col-sm-8" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">入职日期</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">入职日期</label>
+							<input id="test1" class="col-sm-12" name="" class="col-sm-8" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">身份证号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">身份证号</label>
+							<input id="" class="col-sm-12" name="" maxlength="200" class="col-sm-8" type="text" value="">
                     	</div>
                 	</div>
                 	
                 	<div class="row control-label">
 						<div class="col-sm-4">
-							<label class="col-sm-4" for="">默认身份</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+							<label for="">默认身份</label>
+							<input id="" class="col-sm-12" name="" maxlength="200" class="col-sm-8" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">参加工作时间</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">参加工作时间</label>
+							<input id="test1" class="col-sm-12" name=""class="col-sm-8" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">电子邮箱</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">电子邮箱</label>
+							<input id="" class="col-sm-12" name="" maxlength="200" class="col-sm-8" type="text" value="">
                       </div>
                 	</div>
                 	
                 	<div class="row control-label">
 						<div class="col-sm-4">
-							<label class="col-sm-4" for="">联系电话</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+							<label for="">联系电话</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">手机号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">手机号</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        	</div>
                        	
                        	<div class="col-sm-4">
-	                        <label class="col-sm-4" for="">传真号</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                        <label for="">传真号</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                       </div>
                 	</div>
                 	
                 	<div class="row control-label">
                 		<div class="col-sm-8">
-							<label class="col-sm-2" for="">地址</label>
-							<input id="" name="" maxlength="200" class="col-sm-10" type="text" value="">
+							<label for="">地址</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
 	                	</div>
 	                   
 	                   	<div class="col-sm-4">
-	                       	<label class="col-sm-4" for=""><font color="red">*</font>邮编</label>
-							<input id="" name="" maxlength="200" class="col-sm-8" type="text" value="">
+	                       	<label for=""><font color="red">*</font>邮编</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
                        </div>
                 	</div>
                 	<div class="row control-label">
                 		<div class="col-sm-12">
-	                		<label class="col-sm-2" for="">备注</label>
-							<input id="" name="" maxlength="200" class="col-sm-10" type="text" value="">
+	                		<label for="">备注</label>
+							<input id="" name="" maxlength="200" class="col-sm-12" type="text" value="">
 						</div>
                 	</div>
                 		
-			    </div>
+			    
               
             </div>
+            
             </div>
             </div>
-        	<!---->
+        	<!--底部-->
+        	<div class="content-footer">
+				<button class="btn btn-default">取消</button>
+				<button class="btn btn-primarys">提交</button>
+			</div>
+				
         </div>
         </div>
         
