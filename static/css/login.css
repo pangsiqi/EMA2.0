@@ -45,10 +45,13 @@ html{height: 100%;}
     width:24%;
     background-color: white;
 }
-.centerDiv h3{
+.centerDiv font{
+	display: block;
     font-size:24px;
     color:#334573;
-    margin: 30px 23px;
+    margin-top:25px;
+    margin-left:33px;
+    margin-bottom:20px;
 }
 .loginscreen.middle-box {
     width: 340px;
@@ -63,20 +66,40 @@ html{height: 100%;}
     margin-top: 15px;
 }
 .form-group {
-    margin-bottom: 5px !important;
-    margin: 11px;
-    padding: 5px;
+    margin-left: 33px;
+    margin-right: 19px;
 }
 .check-box {
-    position: relative;
-    display: block;
-    margin-top: -23px;
-    /* margin-bottom: 10px; */
-    padding-left: 0px;
+    margin-left: 33px;
+    margin-right: 19px;
+    margin-top: -15px;
+}
+.check-box input{
+	vertical-align: middle;
+}
+.check-box label{
+	vertical-align: middle;
+	margin-bottom: 0px!important;
+	font-weight:normal;
+}
+.check-box span{
+	display: block;
+	text-align: right;
+}
+.check-box .forget{
+	margin-top: 8px;
+    float: right;
+    height:16px;
+	font-size:14px;
+	color:#6585DF;
+	line-height:16px;
+}
+.check-box .mind{
+    float: left;
 }
 .full-width {
     width: 86% !important;
-    margin-left: 23px;
+    margin-left: 33px;
     margin-top: 5px;
 }
 .form-group input{
@@ -96,12 +119,11 @@ html{height: 100%;}
     color:white;
 }
 .btn-login {
-    border-radius: 3px;
-    width:295px;
     height:40px;
-    background:linear-gradient(157deg,rgba(130,177,237,1) 0%,rgba(176,115,253,1) 100%);
+    background:linear-gradient(157deg,#82B1ED 0%,#B073FD 100%);
     border-radius:6px;
-    color:white;
+    color:#fff;
+    border:1px solid #82B1ED ;
 }
 .footer-content{
     text-align: center;
