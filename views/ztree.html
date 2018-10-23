@@ -98,6 +98,16 @@ $(function () {
     // 最大化 || 还原
     $(".icon-maximization").bind("click", maxDialog);
     $(".icon-restore").bind("click", rebackDialog);
+    $('.mask_anniu').on('click','.icon-close1',function(){
+				$('.mask_div').hide();
+				$('.mask').hide();
+    });
+    //折叠icon-arrow1-down
+    $('.col_but').on('click','.icon-arrow1-down',function(){
+    	$(this).toggleClass('icon-arrow1-up')/*达到切换背景箭头的效果*/
+    	$(this).parent().parent().next().slideToggle();
+				
+    });
 });
 	function maxDialog() {
 		$(".mask_div").width(document.body.clientWidth);	
@@ -126,16 +136,7 @@ $(function () {
 	
 	}
 	//关闭
-	$('.mask_anniu').on('click','.icon-close1',function(){
-				$('.mask_div').hide();
-				$('.mask').hide();
-    });
-    //折叠icon-arrow1-down
-    $('.col_but').on('click','.icon-arrow1-down',function(){
-    	$(this).toggleClass('icon-arrow1-up')/*达到切换背景箭头的效果*/
-    	$(this).parent().parent().next().slideToggle();
-				
-    });
+	
 	
 	
 	//data
